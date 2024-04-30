@@ -92,6 +92,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 446016609952434290}
+  - component: {fileID: 8212891093140230509}
+  - component: {fileID: 8938516972196675802}
   m_Layer: 0
   m_Name: Bed
   m_TagString: Untagged
@@ -117,6 +119,40 @@ Transform:
   - {fileID: 6562694891462358451}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8212891093140230509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8744803273720385062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e8729cd4ba8f248ba6c6ff3fba1234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  renderer: {fileID: 1871036020376154180}
+--- !u!65 &8938516972196675802
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8744803273720385062}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5968726, y: 1.0272003, z: 3.1310391}
+  m_Center: {x: -0.0034923553, y: 0.49324268, z: 0.013864517}
 --- !u!1001 &1277202575047545638
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,7 +171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5380368625591789205, guid: 809faf9f96850334eb101cb0be513b8d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5380368625591789205, guid: 809faf9f96850334eb101cb0be513b8d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -175,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9204604358520570071, guid: 809faf9f96850334eb101cb0be513b8d, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -245,7 +281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3057455694974717335, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4132066849632418206, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: thisObject

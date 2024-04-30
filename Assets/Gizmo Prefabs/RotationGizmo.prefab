@@ -2850,7 +2850,7 @@ GameObject:
   - component: {fileID: 5380368625591789205}
   m_Layer: 0
   m_Name: RotationGizmo
-  m_TagString: Untagged
+  m_TagString: RotationGizmo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
