@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class InactiveState : IObjectState
@@ -25,14 +26,18 @@ public class ActiveState : IObjectState
 
 	private Renderer renderer;
 
-	public void OnEnterState(ObjectBehaviour obj)
+    private ObjectManager manager;
+
+    public void OnEnterState(ObjectBehaviour obj)
 	{
 		Debug.Log("Entering Active State!");
 
 		renderer = obj.renderer;
 		renderer.material.color = Color.green;
 
-		Transform thisobject = obj.gameObject.transform;
+        manager = GameObject.FindWithTag("Object Manager").GetComponent<ObjectManager>();
+
+        Transform thisobject = obj.gameObject.transform;
 
 		// Verify and find the gizmos
 		foreach(Transform gizmo in thisobject)
@@ -68,9 +73,17 @@ public class ActiveState : IObjectState
 			rotationGizmo.SetActive(true);
 		}
 
+		if(Input.GetKeyDown(KeyCode.D))
+		{
+            obj.DestroyObject();
+        }
+
 		if(Input.GetKeyDown(KeyCode.Escape))
 			obj.SetState(new InactiveState());
-	}
+
+		if(manager.currentObj != obj.gameObject && manager.currentObj != null)
+            obj.SetState(new InactiveState());
+    }
 	public void OnExitState(ObjectBehaviour obj)
 	{
 		//Deactivate all gizmos
