@@ -26,8 +26,8 @@ public class MoveGizmoController : MonoBehaviour
 			Debug.Log("DRAGGING! X");
 			float horizontalInput = Input.GetAxis("Mouse X");
 			thisObject.transform.position += new Vector3(horizontalInput * moveSpeed, 0, 0); // Move on the X axis
-		}
-		else if (gameObject.tag == "Zgizmo")
+        }
+        else if (gameObject.tag == "Zgizmo")
 		{
 			Debug.Log("DRAGGING! Z");
 			float horizontalInput = Input.GetAxis("Mouse Y");

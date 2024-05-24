@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - RotationGizmo
+  - TransformGizmo
+  - Zgizmo
+  - Xgizmo
+  - Object Manager
+  - Platform
   layers:
   - Default
   - TransparentFX
