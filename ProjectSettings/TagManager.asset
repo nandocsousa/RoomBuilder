@@ -10,6 +10,7 @@ TagManager:
   - Xgizmo
   - Object Manager
   - Platform
+  - Grid Maker
   layers:
   - Default
   - TransparentFX

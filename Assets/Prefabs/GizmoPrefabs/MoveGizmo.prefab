@@ -307,7 +307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisObject: {fileID: 0}
-  moveSpeed: 0.1
+  moveSpeed: 0.4
 --- !u!1 &1039700131064729394
 GameObject:
   m_ObjectHideFlags: 0
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisObject: {fileID: 0}
-  moveSpeed: 0.1
+  moveSpeed: 0.4
 --- !u!1 &4703895020656290538
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisObject: {fileID: 0}
-  moveSpeed: 0.1
+  moveSpeed: 0.4
 --- !u!1 &5248290796464868676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,7 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   thisObject: {fileID: 0}
-  moveSpeed: 0.1
+  moveSpeed: 0.4
 --- !u!1 &8536588653713936325
 GameObject:
   m_ObjectHideFlags: 0

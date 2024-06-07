@@ -23,7 +23,7 @@ public class ObjectBehaviour : MonoBehaviour
 		currentState.OnUpdateState(this);
     }
 
-	public void SetState(IObjectState state)
+	public void SetState(IObjectState state	)
 	{
 		if (currentState != null)
 		{

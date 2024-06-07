@@ -19,6 +19,23 @@ public class InactiveState : IObjectState
 	}
 }
 
+public class EditingState : IObjectState
+{
+    public void OnEnterState(ObjectBehaviour obj)
+    {
+        Debug.Log("Entering Moving State!");
+    }
+    public void OnUpdateState(ObjectBehaviour obj)
+    {
+		//Receive order by gizmos to move
+		//Swap movements/rotations/gridMovement Here
+    }
+    public void OnExitState(ObjectBehaviour obj)
+    {
+        Debug.Log("Exiting Moving State!");
+    }
+}
+
 public class ActiveState : IObjectState
 {
 	private GameObject transformGizmo;
@@ -28,6 +45,9 @@ public class ActiveState : IObjectState
 
     private ObjectManager manager;
 
+    private GridMaker gridMaker;
+	private bool gridState;
+
     public void OnEnterState(ObjectBehaviour obj)
 	{
 		Debug.Log("Entering Active State!");
@@ -36,6 +56,7 @@ public class ActiveState : IObjectState
 		renderer.material.color = Color.green;
 
         manager = GameObject.FindWithTag("Object Manager").GetComponent<ObjectManager>();
+        gridMaker = GameObject.FindWithTag("Grid Maker").GetComponent<GridMaker>();
 
         Transform thisobject = obj.gameObject.transform;
 
@@ -75,20 +96,56 @@ public class ActiveState : IObjectState
 
 		if(Input.GetKeyDown(KeyCode.D))
 		{
+			//Destroy object
             obj.DestroyObject();
         }
 
-		if(Input.GetKeyDown(KeyCode.Escape))
-			obj.SetState(new InactiveState());
+		if (Input.GetKeyUp(KeyCode.G) && gridState == false)
+		{
+			//Activate the grid
+			gridState = true;
+
+			//Deactivate any other active gizmo
+			rotationGizmo.SetActive(false);
+
+			//Activate the gizmo we want to show
+			transformGizmo.SetActive(true);
+
+            renderer.material.color = Color.blue;
+        }
+		else if (Input.GetKeyUp(KeyCode.G) && gridState == true)
+        {
+			gridState = false; //Deactivate the grid
+
+            renderer.material.color = Color.green;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+			obj.SetState(new InactiveState()); //Enter Inactive state
 
 		if(manager.currentObj != obj.gameObject && manager.currentObj != null)
-            obj.SetState(new InactiveState());
+            obj.SetState(new InactiveState()); //Enter Inactive state
+
+        if (gridState == true) //Check positions of the grid
+        {
+            for (int x = 0; x < gridMaker.platformSizeX; x++)
+                for (int z = 0; z < gridMaker.platformSizeZ; z++)
+                {
+                    float distance = Vector3.Distance(gridMaker.point[x, z], obj.transform.position);
+                    if (distance <= gridMaker.lockDistance)
+                        obj.transform.position = gridMaker.point[x, z];
+                }
+        }
+        //After leaving editing mode
+        //lock to the points if grid is true and return to editing
+		//otherwise just stay active
     }
-	public void OnExitState(ObjectBehaviour obj)
+    public void OnExitState(ObjectBehaviour obj)
 	{
 		//Deactivate all gizmos
 		transformGizmo.SetActive(false);
 		rotationGizmo.SetActive(false);
+		gridState = false;
 
 		renderer.material.color = Color.white;
 
