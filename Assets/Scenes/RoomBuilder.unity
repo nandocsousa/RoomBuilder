@@ -697,7 +697,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 72365120}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 698587553}
+        m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+        m_MethodName: ChangeFloor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 0576b3490a5948442aace3fadba823bb, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &72365120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1232,7 +1244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 225572173}
   m_Layer: 5
-  m_Name: MenuOtherBuildings (6)
+  m_Name: MenuFloorWall (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1544,7 +1556,7 @@ GameObject:
   - component: {fileID: 257790341}
   - component: {fileID: 257790340}
   m_Layer: 5
-  m_Name: Living Room
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1903,7 +1915,7 @@ GameObject:
   - component: {fileID: 316232612}
   - component: {fileID: 316232611}
   m_Layer: 5
-  m_Name: Other Buildings
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1948,7 +1960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Other Buildings
+  m_text: Floors & Walls
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2231,7 +2243,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 411448351}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 698587553}
+        m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+        m_MethodName: ChangeFloor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: a384b583426023d4da68d3f25e868451, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &411448351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2365,7 +2389,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 413171913}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 698587553}
+        m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+        m_MethodName: ChangeWall
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 2342d9e0c7a36764eba7633c4984d1ed, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &413171913
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4216,10 +4252,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 698587550}
+  - component: {fileID: 698587551}
+  - component: {fileID: 698587553}
   - component: {fileID: 698587549}
   - component: {fileID: 698587548}
   - component: {fileID: 698587547}
-  - component: {fileID: 698587551}
+  - component: {fileID: 698587552}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4352,6 +4390,62 @@ MonoBehaviour:
   - {fileID: 1594657593}
   - {fileID: 611355477}
   - {fileID: 225572172}
+--- !u!23 &698587552
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698587546}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &698587553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 698587546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e493c6349df267148bbc4f0ed8606dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floor: {fileID: 577565140}
+  wall: {fileID: 1873227199}
 --- !u!1 &706902044
 GameObject:
   m_ObjectHideFlags: 0
@@ -6196,7 +6290,7 @@ GameObject:
   - component: {fileID: 1095033960}
   - component: {fileID: 1095033959}
   m_Layer: 5
-  m_Name: ButtonOtherBuildings
+  m_Name: ButtonFloorWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7428,7 +7522,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1217510254}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 698587553}
+        m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+        m_MethodName: ChangeFloor
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: a29dc5e705e2f4a429ca2000cb221c43, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1217510254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8821,7 +8927,7 @@ GameObject:
   - component: {fileID: 1457595766}
   - component: {fileID: 1457595765}
   m_Layer: 5
-  m_Name: Kitchen
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9407,7 +9513,7 @@ GameObject:
   - component: {fileID: 1632408278}
   - component: {fileID: 1632408277}
   m_Layer: 5
-  m_Name: Bedroom
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9611,7 +9717,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1643388578}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 698587553}
+        m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+        m_MethodName: ChangeWall
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 4ba436b99e17b6e4fa83ff923eb032f4, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1643388578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10418,7 +10536,7 @@ GameObject:
   - component: {fileID: 1799027579}
   - component: {fileID: 1799027578}
   m_Layer: 5
-  m_Name: Bathroom
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10819,7 +10937,7 @@ GameObject:
   - component: {fileID: 1854479365}
   - component: {fileID: 1854479364}
   m_Layer: 5
-  m_Name: Dining
+  m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11023,7 +11141,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1858121615}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 698587553}
+        m_TargetAssemblyTypeName: MaterialController, Assembly-CSharp
+        m_MethodName: ChangeWall
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 2100000, guid: 92cff70e38e4a8f4d80b274916986644, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1858121615
 MonoBehaviour:
   m_ObjectHideFlags: 0
