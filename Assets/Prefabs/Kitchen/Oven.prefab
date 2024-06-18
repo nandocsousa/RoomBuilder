@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 6602860078598364533}
   - component: {fileID: 1568877926585609363}
   - component: {fileID: 6924579517285917163}
+  - component: {fileID: -8681776359047191817}
   m_Layer: 0
   m_Name: Oven
   m_TagString: Untagged
@@ -154,6 +155,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0694714, y: 2.0376434, z: 2.3875499}
   m_Center: {x: -0.009546518, y: 1.0058942, z: -0.14144874}
+--- !u!114 &-8681776359047191817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4194048453445505866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa643871303aded4d9da6a34febb0200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platform: {fileID: 0}
+  platformSizeX: 0
+  platformSizeZ: 0
+  Xsize: 1
+  Zsize: 1.2
 --- !u!1 &6146344120043442797
 GameObject:
   m_ObjectHideFlags: 0
@@ -359,6 +377,10 @@ PrefabInstance:
       propertyPath: thisObject
       value: 
       objectReference: {fileID: 4194048453445505866}
+    - target: {fileID: 2249243457650960033, guid: b676f787608497440be075dac1feba9e, type: 3}
+      propertyPath: thisObject
+      value: 
+      objectReference: {fileID: 4194048453445505866}
     - target: {fileID: 3057455694974717335, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: m_Name
       value: MoveGizmo
@@ -368,6 +390,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4132066849632418206, guid: b676f787608497440be075dac1feba9e, type: 3}
+      propertyPath: thisObject
+      value: 
+      objectReference: {fileID: 4194048453445505866}
+    - target: {fileID: 4953420688330575975, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: thisObject
       value: 
       objectReference: {fileID: 4194048453445505866}

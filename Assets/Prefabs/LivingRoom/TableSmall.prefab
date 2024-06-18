@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9076948346723346879}
   - component: {fileID: 3252003491731646020}
   - component: {fileID: 4762695608991151841}
+  - component: {fileID: -137005894607040728}
   m_Layer: 0
   m_Name: TableSmall
   m_TagString: Untagged
@@ -68,8 +69,25 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1.0323104, z: 1}
-  m_Center: {x: 0, y: 0.53463906, z: 0}
+  m_Size: {x: 1, y: 1.0103784, z: 1}
+  m_Center: {x: 0, y: 0.50539637, z: 0}
+--- !u!114 &-137005894607040728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266429763828775439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa643871303aded4d9da6a34febb0200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platform: {fileID: 0}
+  platformSizeX: 0
+  platformSizeZ: 0
+  Xsize: 0.5
+  Zsize: 0.5
 --- !u!1 &8107103839160010080
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +223,10 @@ PrefabInstance:
       propertyPath: thisObject
       value: 
       objectReference: {fileID: 1266429763828775439}
+    - target: {fileID: 2249243457650960033, guid: b676f787608497440be075dac1feba9e, type: 3}
+      propertyPath: thisObject
+      value: 
+      objectReference: {fileID: 1266429763828775439}
     - target: {fileID: 3057455694974717335, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: m_Name
       value: MoveGizmo
@@ -214,6 +236,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4132066849632418206, guid: b676f787608497440be075dac1feba9e, type: 3}
+      propertyPath: thisObject
+      value: 
+      objectReference: {fileID: 1266429763828775439}
+    - target: {fileID: 4953420688330575975, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: thisObject
       value: 
       objectReference: {fileID: 1266429763828775439}

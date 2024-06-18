@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3901477892013197915}
   - component: {fileID: 5469005346330152682}
   - component: {fileID: 5992729111140089582}
+  - component: {fileID: 7088988018581501517}
   m_Layer: 0
   m_Name: Couch
   m_TagString: Untagged
@@ -70,6 +71,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.0712366, y: 1.3018428, z: 1.6649938}
   m_Center: {x: -0.007861614, y: 0.58203954, z: -0.029389352}
+--- !u!114 &7088988018581501517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7303347062721903536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa643871303aded4d9da6a34febb0200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platform: {fileID: 0}
+  platformSizeX: 0
+  platformSizeZ: 0
+  Xsize: 1.5
+  Zsize: 0.75
 --- !u!1 &8974910699922628192
 GameObject:
   m_ObjectHideFlags: 0
@@ -275,6 +293,10 @@ PrefabInstance:
       propertyPath: thisObject
       value: 
       objectReference: {fileID: 7303347062721903536}
+    - target: {fileID: 2249243457650960033, guid: b676f787608497440be075dac1feba9e, type: 3}
+      propertyPath: thisObject
+      value: 
+      objectReference: {fileID: 7303347062721903536}
     - target: {fileID: 3057455694974717335, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: m_Name
       value: MoveGizmo
@@ -284,6 +306,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4132066849632418206, guid: b676f787608497440be075dac1feba9e, type: 3}
+      propertyPath: thisObject
+      value: 
+      objectReference: {fileID: 7303347062721903536}
+    - target: {fileID: 4953420688330575975, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: thisObject
       value: 
       objectReference: {fileID: 7303347062721903536}

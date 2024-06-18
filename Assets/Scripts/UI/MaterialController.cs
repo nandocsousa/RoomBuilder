@@ -7,7 +7,7 @@ public class MaterialController : MonoBehaviour
 {
     private MeshRenderer meshRenderer;
     public GameObject floor;
-    public GameObject wall;
+    public GameObject[] wall;
 
     private void Start()
     {
@@ -24,9 +24,14 @@ public class MaterialController : MonoBehaviour
 
     public void ChangeWall(Material newMaterial)
     {
-        MeshRenderer meshRenderer;
-        meshRenderer = wall.GetComponent<MeshRenderer>();
-        meshRenderer.material = newMaterial;
-        meshRenderer.material.mainTextureScale = new Vector2(10, 10);
+        MeshRenderer[] meshRenderer;
+        meshRenderer = new MeshRenderer[4];
+
+        for (int i = 0; i < wall.Length; i++)
+        {
+            meshRenderer[i] = wall[i].GetComponent<MeshRenderer>();
+            meshRenderer[i].material = newMaterial;
+            meshRenderer[i].material.mainTextureScale = new Vector2(5, 5);
+        }
     }
 }

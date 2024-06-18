@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8134188820580074670}
   - component: {fileID: 9008806326911476070}
   - component: {fileID: 2252817279295915449}
+  - component: {fileID: 6369150453322964915}
   m_Layer: 0
   m_Name: Sink
   m_TagString: Untagged
@@ -70,6 +71,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.0694714, y: 1.8211747, z: 2.077392}
   m_Center: {x: -0.009546518, y: 0.89765984, z: 0.013630152}
+--- !u!114 &6369150453322964915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656244779826384790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa643871303aded4d9da6a34febb0200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platform: {fileID: 0}
+  platformSizeX: 0
+  platformSizeZ: 0
+  Xsize: 1
+  Zsize: 1
 --- !u!1 &6949568382399925560
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,6 +223,10 @@ PrefabInstance:
       propertyPath: thisObject
       value: 
       objectReference: {fileID: 656244779826384790}
+    - target: {fileID: 2249243457650960033, guid: b676f787608497440be075dac1feba9e, type: 3}
+      propertyPath: thisObject
+      value: 
+      objectReference: {fileID: 656244779826384790}
     - target: {fileID: 3057455694974717335, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: m_Name
       value: MoveGizmo
@@ -214,6 +236,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4132066849632418206, guid: b676f787608497440be075dac1feba9e, type: 3}
+      propertyPath: thisObject
+      value: 
+      objectReference: {fileID: 656244779826384790}
+    - target: {fileID: 4953420688330575975, guid: b676f787608497440be075dac1feba9e, type: 3}
       propertyPath: thisObject
       value: 
       objectReference: {fileID: 656244779826384790}

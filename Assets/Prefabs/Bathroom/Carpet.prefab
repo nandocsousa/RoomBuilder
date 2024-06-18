@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6e8729cd4ba8f248ba6c6ff3fba1234, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 0}
+  renderer: {fileID: 7116318664586719491}
 --- !u!65 &8938516972196675802
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   platformSizeX: 0
   platformSizeZ: 0
   Xsize: 1
-  Zsize: 1.75
+  Zsize: 0.4
 --- !u!1001 &1277202575047545638
 PrefabInstance:
   m_ObjectHideFlags: 0

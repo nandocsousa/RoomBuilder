@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,16 +6,21 @@ using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class SaveLoad : MonoBehaviour
 {
-    private void Start()
+    SaveObject saveObject;
+	private int gObjQuantity;
+
+    public GameObject[] storedObjects;
+
+	private void Start()
     {
         SaveSystem.Init();
-    }
+		saveObject = new SaveObject();
+	}
 
-    private void Update()
+	private void Update()
     {
         if (Input.GetKeyDown(KeyCode.S))
             Save();
@@ -30,21 +34,26 @@ public class SaveLoad : MonoBehaviour
         List<SaveObject> saveObjectsList = new List<SaveObject>(); // Create a list to store the objects to be saved
 
         // Store all GameObjects in the scene in an array
-        GameObject[] storedObjects = FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+        storedObjects = GameObject.FindGameObjectsWithTag("prefab");
 
-
-        foreach (GameObject obj in storedObjects)
+        foreach (GameObject gObj in storedObjects)
         {
-            // Create a SaveObject for each GameObject, storing its reference, position and rotation
-            SaveObject saveObject = new SaveObject
-            {
-                obj = obj,
-                objPosition = obj.transform.position,
-                objRotation = obj.transform.rotation
-            };
+            gObjQuantity++;
+		}
 
-            saveObjectsList.Add(saveObject); // Add the SaveObject to the list
-        }
+        for (int i = 0; i < storedObjects.Length; i++)
+        {
+			Debug.Log(" " + storedObjects[i].transform.gameObject.name);
+		}
+
+        for (int i = 0; i < gObjQuantity; i++)
+        {
+            saveObject.obj[i] = storedObjects[i];
+			saveObject.objPosition[i] = storedObjects[i].transform.position;
+			saveObject.objRotation[i] = storedObjects[i].transform.rotation;
+
+			saveObjectsList.Add(saveObject); // Add the SaveObject to the list
+		}
 
         string jsonSave = JsonUtility.ToJson(saveObjectsList); // Convert the list of SaveObjects to a JSON string
 
@@ -60,26 +69,27 @@ public class SaveLoad : MonoBehaviour
 
         if (jsonLoad != null)
         {
-            List<SaveObject> saveObjectsList = JsonUtility.FromJson<List<SaveObject>>(jsonLoad); // Deserialize the JSON string back into a list of SaveObjects
+			// Deserialize the JSON string back into a list of SaveObjects
+			List<SaveObject> saveObjectsList = JsonUtility.FromJson<List<SaveObject>>(jsonLoad); 
 
-            foreach (SaveObject saveObject in saveObjectsList)
-            {
-                // Retrieves the GameObject associated with the SaveObject and sets the position and rotation of the GameObject to match the saved values
-                GameObject loadObject = saveObject.obj;
-                loadObject.transform.position = saveObject.objPosition;
-                loadObject.transform.rotation = saveObject.objRotation;
+			for (int i = 0; i < gObjQuantity; i++)
+			{
+				GameObject loadObject = saveObject.obj[i].transform.gameObject;
 
-                Debug.Log("Loaded!");
-            }
-                
-        }
+				loadObject.transform.position = new Vector3(saveObject.objPosition[i].x, saveObject.objPosition[i].y, saveObject.objPosition[i].z);
+				loadObject.transform.rotation = new Quaternion(saveObject.objRotation[i].x, saveObject.objRotation[i].y, saveObject.objRotation[i].z, 0);
+
+				saveObjectsList.Add(saveObject); // Add the SaveObject to the list
+			}
+
+		}
         else Debug.Log("Not Loaded!");
     }
 
-    private class SaveObject // Represents the data structure for saving and loading GameObjects
+    public class SaveObject // Represents the data structure for saving and loading GameObjects
     {
-        public GameObject obj;
-        public Vector3 objPosition;
-        public Quaternion objRotation;
+        public GameObject[] obj;
+        public Vector3[] objPosition;
+        public Quaternion[] objRotation;
     }
 }
