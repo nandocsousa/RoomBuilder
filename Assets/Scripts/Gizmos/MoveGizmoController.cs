@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class MoveGizmoController : MonoBehaviour
 {
-    private ObjectBehaviour objBehaviour;
+    //private ObjectBehaviour objBehaviour;
 
     public GameObject thisObject; // Choose the Object
 	public float moveSpeed; // Speed of the movement
 
     private void Start()
     {
-        objBehaviour = thisObject.GetComponent<ObjectBehaviour>();
+        //objBehaviour = thisObject.GetComponent<ObjectBehaviour>();
     }
     void OnMouseDown()
 	{
 		Debug.Log("Pressed!");
-        objBehaviour.SetState(new EditingState());
+        //objBehaviour.SetState(new EditingState());
     }
 
 	void OnMouseUp()
 	{
 		Debug.Log("Released!");
-        objBehaviour.SetState(new ActiveState());
+        //objBehaviour.SetState(new ActiveState());
     }
 
 	void OnMouseDrag()

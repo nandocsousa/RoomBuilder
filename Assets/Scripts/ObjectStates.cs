@@ -42,6 +42,7 @@ public class ActiveState : IObjectState
 	private GameObject rotationGizmo;
 
 	private Renderer renderer;
+	private Collider collider;
 
     private ObjectManager manager;
 
@@ -55,7 +56,11 @@ public class ActiveState : IObjectState
 		renderer = obj.renderer;
 		renderer.material.color = Color.green;
 
-        manager = GameObject.FindWithTag("Object Manager").GetComponent<ObjectManager>();
+		collider = obj.GetComponent<Collider>();
+		//Deactivate collider
+		collider.enabled = false;
+
+		manager = GameObject.FindWithTag("Object Manager").GetComponent<ObjectManager>();
         gridMaker = GameObject.FindWithTag("Grid Maker").GetComponent<GridMaker>();
 
         Transform thisobject = obj.gameObject.transform;
@@ -148,6 +153,7 @@ public class ActiveState : IObjectState
 		gridState = false;
 
 		renderer.material.color = Color.white;
+		collider.enabled = true;
 
 		Debug.Log("Exiting Active State!");
 	}
