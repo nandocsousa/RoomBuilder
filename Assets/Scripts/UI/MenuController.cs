@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuController : MonoBehaviour
 {
@@ -31,6 +32,16 @@ public class MenuController : MonoBehaviour
     public void ShowObject(GameObject menu)
     {
         menu.SetActive(true);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("RoomBuilder");
+    }
+
+    public void StartMenu()
+    {
+        SceneManager.LoadScene("StartMenu");
     }
 
     public void QuitGame()
